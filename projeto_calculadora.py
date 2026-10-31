@@ -1,11 +1,15 @@
 import os
 os.system("cls")
+'''
+Criando as funções passando como parâmetro dois valores e retornando o resultado do calculo pra que possa ser usa posteriormente com o "evoluir" do projeto.
 
-# Criar função para calculo da soma.
+O pedido dos dois valores serão pedidos dentro da função chamar funções (o menu) e as variaveis preenchidas pelo usuario serão passadas como parametro 
+'''
+def somar(a: float, b: float) -> float:
+    soma = a + b                    
+    return soma 
 
-def somar() -> int:
-    a = int(input("Número 1: "))
-    b = int(input("Número 2: "))
-    print(f"A soma de {a} + {b} = {(a + b)}")
-
+def somar(a: float, b: float) -> float:
+    subtracao = a - b
+    return subtracao
 
