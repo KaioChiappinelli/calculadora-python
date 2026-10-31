@@ -5,6 +5,11 @@ Criando as funções passando como parâmetro dois valores e retornando o result
 
 O pedido dos dois valores serão pedidos dentro da função chamar funções e as variaveis preenchidas pelo usuario serão passadas como parametro 
 '''
+def pedir_numeros() -> tuple[float, float]: 
+    n1 = float(input("Número 1: "))
+    n2 = float(input("Número 2: "))    
+    return n1, n2
+
 def somar(a: float, b: float) -> float:
     soma = a + b                    
     return soma 
@@ -39,25 +44,21 @@ def chamar_funcoes():
         opcao = int(input("Escolha: "))
         match opcao:
             case 1:
-                n1 = float(input("\nNúmero 1: "))
-                n2 = float(input("Número 2: "))
+                n1, n2 = pedir_numeros()
                 resultado = somar(n1, n2)
                 print(f"\nO resultado da soma de {n1} + {n2} = {resultado}\n")
             case 2:
-                n1 = float(input("Número 1: "))
-                n2 = float(input("Número 2: "))
+                n1, n2 = pedir_numeros()
                 resultado = subtrair(n1, n2)
                 print(f"\nO resultado da subtração de {n1} - {n2} = {resultado}\n")
             case 3:
-                n1 = float(input("Número 1: "))
-                n2 = float(input("Número 2: "))
+                n1, n2 = pedir_numeros()
                 resultado = multiplicar(n1, n2)
                 print(f"\nO resultado da multiplicação de {n1} x {n2} = {resultado}\n")
             case 4:
-                    n1 = float(input("Número 1: "))
-                    n2 = float(input("Número 2: "))
-                    resultado = dividir(n1, n2)
-                    print(f"\nO resultado da divisão de {n1} ÷ {n2} = {resultado}\n")
+                n1, n2 = pedir_numeros()
+                resultado = dividir(n1, n2)
+                print(f"\nO resultado da divisão de {n1} ÷ {n2} = {resultado}\n")
             case 5:
                 break
             case _:
