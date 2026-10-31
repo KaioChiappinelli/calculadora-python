@@ -15,4 +15,4 @@ obs: no momento não tenho muita ideia de como implementar isso
 - Divisão
 
 ## Estrutura
-Cada calculo é uma **função** com parametros e argumentos padrões passados e retornando o resultado do calculo, os valores só são atribuidos ás funções durante a chamada delas no **match case** e exibindo o resultado num **f string**. 
+Cada calculo é uma **função** com parametros, argumentos padrões passados e retornando o resultado do calculo, os valores só são atribuidos ás funções durante a chamada delas no **match case** e exibindo o resultado num **f string**. 
