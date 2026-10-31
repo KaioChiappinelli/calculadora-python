@@ -3,7 +3,7 @@ os.system("cls")
 '''
 Criando as funções passando como parâmetro dois valores e retornando o resultado do calculo pra que possa ser usa posteriormente com o "evoluir" do projeto.
 
-O pedido dos dois valores serão pedidos dentro da função chamar funções (o menu) e as variaveis preenchidas pelo usuario serão passadas como parametro 
+O pedido dos dois valores serão pedidos dentro da função chamar funções e as variaveis preenchidas pelo usuario serão passadas como parametro 
 '''
 def somar(a: float, b: float) -> float:
     soma = a + b                    
@@ -28,32 +28,40 @@ def menu():
     2 - Subtrair
     3 - Multiplicar
     4 - Dividir
+    5 - Sair
 """)
-    opcao = input("Escolha: ")
+                
+def chamar_funcoes():
+    opcao = 0
+    
+    while opcao != 5:
+        menu()
+        opcao = int(input("Escolha: "))
+        match opcao:
+            case 1:
+                n1 = float(input("\nNúmero 1: "))
+                n2 = float(input("Número 2: "))
+                resultado = somar(n1, n2)
+                print(f"\nO resultado da soma de {n1} + {n2} = {resultado}\n")
+            case 2:
+                n1 = float(input("Número 1: "))
+                n2 = float(input("Número 2: "))
+                resultado = subtrair(n1, n2)
+                print(f"\nO resultado da subtração de {n1} - {n2} = {resultado}\n")
+            case 3:
+                n1 = float(input("Número 1: "))
+                n2 = float(input("Número 2: "))
+                resultado = multiplicar(n1, n2)
+                print(f"\nO resultado da multiplicação de {n1} x {n2} = {resultado}\n")
+            case 4:
+                    n1 = float(input("Número 1: "))
+                    n2 = float(input("Número 2: "))
+                    resultado = dividir(n1, n2)
+                    print(f"\nO resultado da divisão de {n1} ÷ {n2} = {resultado}\n")
+            case 5:
+                break
+            case _:
+                print("Opção inválida\n")
 
-    match opcao:
-        case "1":
-            n1 = float(input("\nNúmero 1: "))
-            n2 = float(input("Número 2: "))
-            resultado = somar(n1, n2)
-            print(f"\nO resultado da soma de {n1} + {n2} = {resultado}")
-        case "2":
-            n1 = float(input("Número 1: "))
-            n2 = float(input("Número 2: "))
-            resultado = subtrair(n1, n2)
-            print(f"\nO resultado da subtração de {n1} - {n2} = {resultado}")
-        case "3":
-            n1 = float(input("Número 1: "))
-            n2 = float(input("Número 2: "))
-            resultado = multiplicar(n1, n2)
-            print(f"\nO resultado da multiplicação de {n1} x {n2} = {resultado}")
-        case "4":
-            n1 = float(input("Número 1: "))
-            n2 = float(input("Número 2: "))
-            resultado = dividir(n1, n2)
-            print(f"\nO resultado da divisão de {n1} ÷ {n2} = {resultado}")
-        case _:
-            print("Opção inválida")
+chamar_funcoes()
 
-            
-menu()
