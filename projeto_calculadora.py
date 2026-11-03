@@ -2,9 +2,16 @@ import os
 os.system("cls")
 
 def pedir_numeros() -> tuple[float, float]: 
-    n1 = float(input("Número 1: "))
-    n2 = float(input("Número 2: "))    
-    return n1, n2
+    while True:
+        try:
+            n1 = float(input("Digite um número: "))
+            n2 = float(input("Digite outro número: "))
+
+            return n1, n2
+        except ValueError:
+            print("Digite apenas números!")
+        except:
+            print("Erro inesperado!")
 
 def somar(a: float, b: float) -> float:
     soma = a + b                    
@@ -52,9 +59,13 @@ def chamar_funcoes():
                 resultado = multiplicar(n1, n2)
                 print(f"\nO resultado da multiplicação de {n1} x {n2} = {resultado}\n")
             case 4:
-                n1, n2 = pedir_numeros()
-                resultado = dividir(n1, n2)
-                print(f"\nO resultado da divisão de {n1} ÷ {n2} = {resultado}\n")
+                while True:
+                    try:
+                        n1, n2 = pedir_numeros()
+                        resultado = dividir(n1, n2)
+                        print(f"\nO resultado da divisão de {n1} ÷ {n2} = {resultado:.2f}\n")
+                    except ZeroDivisionError:
+                        print("Não é possível dividir por zero!")
             case 5:
                 break
             case _:
