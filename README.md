@@ -4,7 +4,7 @@
 Calculadora desenvolvida em python - Meu primeiro projeto prático de programação em python do github, pratiquei os conceitos que estou aplicando nesse projeto em exercícios, atividades e trabalhos da faculdade. Então decidi começa-lo com intuito de praticar conceitos de forma mais independente e desafiadora (principalmente por ser sem IA pra gerar codigo), ir evoluindo o projeto progressivamente e também treinar o uso de git e github
 
 ## Próximas melhorias
-- [x] Adicionar a possibilidade do usuario fazer a operação com quantos números ele quiser
+- [x] Adicionar a possibilidade do usuario fazer a operação com quantos números o usuário quiser
 - [ ] Usar o resultado de uma operação anterior para uma nova operação
 
 
