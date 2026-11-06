@@ -10,6 +10,10 @@ def pedir_numeros() -> list[float]:
             if entrada != "s":
                 numero = float(entrada)
                 numeros.append(numero)
+            elif len(numeros) < 2:
+                print("Digite ao menos dois números!")
+                entrada = "" # Variável entrada passa a ter nenhum valor
+                continue
         except ValueError:
             print('Digite apenas números ou "s" para sair')
         except:
@@ -23,8 +27,8 @@ def somar(valores: list[float]) -> float:
     return soma
 
 def subtrair(valores: list[float]) -> float:
-    subtracao = valores[0]
-    for numero in valores[1:]:
+    subtracao = valores[0] # Para que a variavel subtracao inicia com o primeiro elemento da lista e subtrair com o proximo
+    for numero in valores[1:]: # Para o loop começar do segundo elemento ja que a variavel subtracao guarda o primeiro
         subtracao -= numero
     return subtracao
 
