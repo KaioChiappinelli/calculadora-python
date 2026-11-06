@@ -1,17 +1,20 @@
 import os
 os.system("cls")
 
-def pedir_numeros() -> tuple[float, float]: 
-    while True:
+def pedir_numeros() -> list[float]: 
+    numeros = []
+    entrada = 0
+    while entrada != "s":
         try:
-            n1 = float(input("Digite um número: "))
-            n2 = float(input("Digite outro número: "))
-
-            return n1, n2
+            entrada = (input("Digite um número (s - parar): ")).lower()
+            if entrada != "s":
+                numero = float(entrada)
+                numeros.append(numero)
         except ValueError:
-            print("Digite apenas números!")
+            print('Digite apenas números ou "s" para sair')
         except:
             print("Erro inesperado!")
+    return numeros
 
 def somar(a: float, b: float) -> float:
     soma = a + b                    
