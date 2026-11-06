@@ -28,12 +28,16 @@ def subtrair(valores: list[float]) -> float:
         subtracao -= numero
     return subtracao
 
-def multiplicar(a: float, b: float) -> float:
-    multiplicacao = a * b
+def multiplicar(valores: list[float]) -> float:
+    multiplicacao = 1
+    for numero in valores:
+        multiplicacao *= numero
     return multiplicacao
 
-def dividir(a: float, b: float) -> float:
-    divisao = a / b
+def dividir(valores: list[float]) -> float:
+    divisao = valores[0]
+    for numero in valores[1:]:
+        divisao /= numero 
     return divisao
 
 def menu():
@@ -51,26 +55,29 @@ def chamar_funcoes():
     
     while opcao != 5:
         menu()
-        opcao = int(input("Escolha: "))
+        try:
+            opcao = int(input("Escolha: "))
+        except ValueError:
+            print("Digite apenas o número da opção escolhida!")
+        
         match opcao:
             case 1:
-                lista_numeros_digitados = pedir_numeros()
-                resultado = somar(lista_numeros_digitados)
+                lista_digitados = pedir_numeros()
+                resultado = somar(lista_digitados)
                 print(f"\nO resultado da soma dos números = {resultado}\n")
             case 2: 
-                lista_numeros_digitados = pedir_numeros()
-                resultado = subtrair(lista_numeros_digitados)
+                lista_digitados = pedir_numeros()
+                resultado = subtrair(lista_digitados)
                 print(f"\nO resultado da subtração dos números = {resultado}\n")
             case 3:
-                n1, n2 = pedir_numeros()
-                resultado = multiplicar(n1, n2)
-                print(f"\nO resultado da multiplicação de {n1} x {n2} = {resultado}\n")
+                lista_digitados = pedir_numeros()
+                resultado = multiplicar(lista_digitados)
+                print(f"\nO resultado da multiplicação dos números = {resultado}\n")
             case 4:
-                while True:
                     try:
-                        n1, n2 = pedir_numeros()
-                        resultado = dividir(n1, n2)
-                        print(f"\nO resultado da divisão de {n1} ÷ {n2} = {resultado:.2f}\n")
+                        lista_digitados = pedir_numeros()
+                        resultado = dividir(lista_digitados)
+                        print(f"\nO resultado da divisão dos números = {resultado:.2f}\n")
                     except ZeroDivisionError:
                         print("Não é possível dividir por zero!")
             case 5:
