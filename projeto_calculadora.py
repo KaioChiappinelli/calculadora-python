@@ -14,14 +14,18 @@ def pedir_numeros() -> list[float]:
             print('Digite apenas números ou "s" para sair')
         except:
             print("Erro inesperado!")
-    return numeros
+    return numeros 
 
-def somar(a: float, b: float) -> float:
-    soma = a + b                    
-    return soma 
+def somar(valores: list[float]) -> float:
+    soma = 0 
+    for numero in valores:
+        soma += numero
+    return soma
 
-def subtrair(a: float, b: float) -> float:
-    subtracao = a - b
+def subtrair(valores: list[float]) -> float:
+    subtracao = valores[0]
+    for numero in valores[1:]:
+        subtracao -= numero
     return subtracao
 
 def multiplicar(a: float, b: float) -> float:
@@ -50,13 +54,13 @@ def chamar_funcoes():
         opcao = int(input("Escolha: "))
         match opcao:
             case 1:
-                n1, n2 = pedir_numeros()
-                resultado = somar(n1, n2)
-                print(f"\nO resultado da soma de {n1} + {n2} = {resultado}\n")
-            case 2:
-                n1, n2 = pedir_numeros()
-                resultado = subtrair(n1, n2)
-                print(f"\nO resultado da subtração de {n1} - {n2} = {resultado}\n")
+                lista_numeros_digitados = pedir_numeros()
+                resultado = somar(lista_numeros_digitados)
+                print(f"\nO resultado da soma dos números = {resultado}\n")
+            case 2: 
+                lista_numeros_digitados = pedir_numeros()
+                resultado = subtrair(lista_numeros_digitados)
+                print(f"\nO resultado da subtração dos números = {resultado}\n")
             case 3:
                 n1, n2 = pedir_numeros()
                 resultado = multiplicar(n1, n2)
