@@ -15,7 +15,6 @@ Calculadora desenvolvida em python - Meu primeiro projeto prático de programaç
 - Divisão
 
 ## Conceitos aplicados
-## Conceitos aplicados no projeto
 
 1. **Variáveis e Tipagem:** armazenamento dos operandos, opções de operação e resultados, com utilização de tipagem explícita (`float`, `int` e `tuple`).
 
