@@ -26,6 +26,6 @@ Calculadora desenvolvida em python - Meu primeiro projeto prático de programaç
 
 5. **Tratamento de Exceções (`try/except`):** identificação e tratamento de erros durante a execução como entradas numéricas inválidas e tentativas de divisão por zero.
 
-6. **Controle de Fluxo (`break`):** interrupção dos laços de repetição para controlar o encerramento do programa e a saída das estruturas de execução.
+6. **Controle de Fluxo (`break/continue`):** interrupção dos laços de repetição para controlar o encerramento do programa e a saída das estruturas de execução.
 
 7. **Formatação de Strings (f-strings):** utilização de interpolação de variáveis para apresentar dinamicamente os cálculos e seus respectivos resultados.
